@@ -42,7 +42,7 @@ export function NavHeader() {
               <div className="absolute left-0 top-0 z-10"></div>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">Primary Workflow</span>
-                <span className="truncate text-xs">v1.0.3</span>
+                <span className="truncate text-xs">v1.1.0</span>
               </div>
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>

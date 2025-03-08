@@ -5,7 +5,6 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "../ui/button";
 import { ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useTableStore } from "@/stores/tableStore";
 import { useTableDataStore } from "@/stores/tableDataStore";
 
 export type ExecutionRecord = {
@@ -160,6 +159,7 @@ export const columns: ColumnDef<ExecutionRecord>[] = [
     cell: ({ row }) => {
       const value = row.getValue("markForReview") === true;
       const execId = row.original.execId;
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const { toggleMarkForReview } = useTableDataStore();
       return (
         <div className="flex justify-end">

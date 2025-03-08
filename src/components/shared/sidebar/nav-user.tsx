@@ -32,12 +32,16 @@ import { useNotificationsStore } from "@/stores/notificationsStore";
 import { cn } from "@/lib/utils";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { useExecutionStore } from "@/stores/executionStore";
+
 export function NavUser() {
   const { user } = useUserStore();
   const { notifications, markAllAsRead } = useNotificationsStore();
   const { isMobile } = useSidebar();
   const [hasBeenOpened, setHasBeenOpened] = React.useState(false);
   const pathName = usePathname();
+  const { openDialog } = useExecutionStore();
+
   return (
     <>
       <SidebarMenu>
@@ -47,6 +51,7 @@ export function NavUser() {
               <SidebarMenuButton
                 size="lg"
                 className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground relative hover:cursor-pointer"
+                onClick={openDialog}
               >
                 <div className="h-8 w-8">
                   <Play />
