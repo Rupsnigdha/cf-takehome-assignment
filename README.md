@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project
+
+This is a Next.js project.
 
 ## Getting Started
 
-First, run the development server:
+### Clone the Repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```sh
+git clone <https://github.com/Rupsnigdha/cf-takehome-assignment>
+cd <cf-takehome-assignment>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Run the Development Server
 
-## Learn More
+```sh
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000/dashboard](http://localhost:3000) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build for Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+## Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Execution Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Changed the deployment name dropdown to also include the label. This provides visual guidelines for the user to see the setting being affected by their seletion.
+2. Pre-rendered the logs before the execution flow begins. We should be able to do this because the workflow has already been configured.
+3. Included time of execution of each step of the process, as the time it took from the inital execution. All of this data can be swapped for other meaningful data.
+4. Once the output is generated, added copy and download buttons, in case the user wants to further study the data.
+5. Made the output render inside a `<pre>` tag, thus formatting the JSON response properly, making it more legible.
+
+### Execution logs
+
+1. Changed the implementation of the side panel and integrated it into the sidebar. This provides a consistent sidebar throughout the project. This also frees up a lot of space to render other meaningful data for each execution.
+2. Added a settings icon to allow users to have a separate place to edit their descriptions and tags.
+3. Implemented sorting in the table based on various columns.
+4. Removed duplicated executionID in the expanded view.
+5. Added a copy and download button, in case the user wants to further study the data.
+6. Made the JSON render inside a `<pre>` tag, thus formatting the JSON response properly, making it more legible.
