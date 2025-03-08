@@ -31,43 +31,46 @@ import { useUserStore } from "@/stores/userStore";
 import { useNotificationsStore } from "@/stores/notificationsStore";
 import { cn } from "@/lib/utils";
 import React from "react";
-
+import { usePathname } from "next/navigation";
 export function NavUser() {
   const { user } = useUserStore();
   const { notifications, markAllAsRead } = useNotificationsStore();
   const { isMobile } = useSidebar();
   const [hasBeenOpened, setHasBeenOpened] = React.useState(false);
+  const pathName = usePathname();
   return (
     <>
       <SidebarMenu>
-        <SidebarGroupContent>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground relative hover:cursor-pointer"
-            >
-              <div className="h-8 w-8">
-                <Play />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                Run
-              </div>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground relative hover:cursor-pointer"
-            >
-              <div className="h-8 w-8">
-                <Package />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                Deploy
-              </div>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarGroupContent>
+        {pathName.endsWith("canvas") && (
+          <SidebarGroupContent>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                size="lg"
+                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground relative hover:cursor-pointer"
+              >
+                <div className="h-8 w-8">
+                  <Play />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  Run
+                </div>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                size="lg"
+                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground relative hover:cursor-pointer"
+              >
+                <div className="h-8 w-8">
+                  <Package />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  Deploy
+                </div>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarGroupContent>
+        )}
 
         <SidebarMenuItem>
           <DropdownMenu>

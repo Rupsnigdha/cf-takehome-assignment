@@ -55,7 +55,7 @@ export default function ContentDashboard() {
                       {version.tags.map((tag, index) => (
                         <div
                           key={index}
-                          className="bg-red-400/60 py-1 px-2 rounded-full text-primary-foreground"
+                          className="bg-primary py-1 px-2 rounded-full text-primary-foreground"
                         >
                           {tag}
                         </div>
