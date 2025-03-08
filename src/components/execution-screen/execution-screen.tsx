@@ -194,7 +194,7 @@ export default function ExecutionScreen() {
           status: "failed", // We'll still mark it completed but will show error in result
         });
 
-        // Set error output
+        setExecutingFlow(false);
         setOutputResult(
           JSON.stringify(
             {
@@ -330,7 +330,6 @@ export default function ExecutionScreen() {
 
                 return (
                   <div key={index} className="flex items-center py-1 gap-2">
-                    {/* Left section - loader, hourglass, timestamp, or failure time */}
                     <div className="min-w-20 text-xs text-gray-500">
                       {log.status === "loading" && isNextToBeResolved && (
                         <div className="h-4 w-4 rounded-full border-2 border-t-transparent animate-spin"></div>

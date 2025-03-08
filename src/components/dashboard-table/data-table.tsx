@@ -117,9 +117,9 @@ export function DataTable<TData, TValue>({
                                   onClick={() =>
                                     navigator.clipboard.writeText(
                                       JSON.stringify(
-                                        typeof row.original.input === "string"
+                                        typeof row.original?.input === "string"
                                           ? JSON.parse(row.original.input)
-                                          : row.original.input,
+                                          : row.original?.input,
                                         null,
                                         2
                                       )
